@@ -32,7 +32,6 @@
             <artifactId>constructs</artifactId>
             <version>${constructs.version}</version>
         </dependency>
-
         <!-- AWS Lambda -->
         <dependency>
             <groupId>com.amazonaws</groupId>
@@ -95,6 +94,14 @@
                 <configuration>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
                     <finalName>lambda</finalName>
+                    <artifactSet>
+                        <excludes>
+                            <exclude>software.amazon.awscdk:aws-cdk-lib</exclude>
+                            <exclude>software.constructs:constructs</exclude>
+                            <exclude>software.amazon.awscdk:cdk-asset-*</exclude>
+                            <exclude>software.amazon.jsii:jsii-runtime</exclude>
+                        </excludes>
+                    </artifactSet>
                 </configuration>
                 <executions>
                     <execution>
